@@ -1,0 +1,61 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "imageLink": "https://m.media-amazon.com/images/I/41rfDU6FGqL._AC_SX679_.jpg",
+            "name": "iPhone 13",
+            "price": 3798.00,
+            "description": "Apple iPhone 13 (128 GB) - Luz das estrelas"
+        },
+        {
+            "id": 2,
+            "imageLink": "https://m.media-amazon.com/images/I/61FQ61igtVL.__AC_SX300_SY300_QL70_ML2_.jpg",
+            "name": "Redmi Note 12",
+            "price": 1052.00,
+            "description": "Celular Xiaomi Redmi Note 12 128GB/6GB RAM/DUAL SIM/TelaP e 13MP - Onyx Gray - Preto"
+        },
+        {
+            "id": 3,
+            "imageLink": "https://m.media-amazon.com/images/I/61t99wqLeaL._AC_SY679_.jpg",
+            "name": "Redmi 12",
+            "price": 1009.90,
+            "description": "Smartphone Xiaomi Redmi 12 4G 256GB - 8GB Ram (Versao Global) (Midnight Black)"
+        },
+        {
+            "id": 4,
+            "imageLink": "https://m.media-amazon.com/images/I/41t1UNX2zHL.__AC_SY445_SX342_QL70_ML2_.jpg",
+            "name": "iPhone 14",
+            "price": 4199.00,
+            "description": "Apple iPhone 14 (128 GB) – Estelar"
+        },
+        {
+            "id": 5,
+            "imageLink": "https://m.media-amazon.com/images/I/51I-054YXGL.__AC_SX300_SY300_QL70_ML2_.jpg",
+            "name": "Ideapad Gaming 3i",
+            "price": 3694.93,
+            "description": "Lenovo 82MG0009BR - Notebook ideapad Gaming 3i, i5-11300H, 8GB, 512GB SSD Dedicada GTX 1650 4GB 15.6 FHD WVA W11, Preto"
+        },
+        {
+            "id": 6,
+            "imageLink": "https://m.media-amazon.com/images/I/61i9XQeASBL.__AC_SX300_SY300_QL70_ML2_.jpg",
+            "name": "PC Gamer Completo",
+            "price": 3159.90,
+            "description": "PC Gamer Completo Mancer, AMD Ryzen 5 4600G, 16GB DDR4, SSD 480GB + Monitor 21"
+        },
+        {
+            "id": 7,
+            "imageLink": "https://m.media-amazon.com/images/I/61NR1TjDpgL.__AC_SX300_SY300_QL70_ML2_.jpg",
+            "name": "Dell G15",
+            "price": 5331.47,
+            "description": "Notebook Gamer Dell G15-i1300-A20P 15.6 FHD 13ª Geração Intel Core i5 8GB 512GB SSD NVIDIA RTX 3050 Windows 11"
+        },
+        {
+            "id": 8,
+            "imageLink": "https://m.media-amazon.com/images/I/41PEaGGM8gL.__AC_SY445_SX342_QL70_ML2_.jpg",
+            "name": "iMac",
+            "price": 12549.00,
+            "description": "Apple iMac (de 24 polegadas, Processador M1 da Apple com CPU 8 core e GPU 8core, 8 GB RAM, 256 GB) - Azul"
+        }
+    ]
+    
+}
