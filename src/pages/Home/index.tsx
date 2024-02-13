@@ -8,7 +8,7 @@ export function Home() {
 
     const getProducts = async () => {
         try {
-            const response = await axios.get("api/products")
+            const response = await axios.get("/api/products")
 
             const data = response.data
             
@@ -20,8 +20,6 @@ export function Home() {
 
     useEffect(() => {
         getProducts()
-
-        console.log(products)
     }, [])
 
     return(
@@ -30,6 +28,7 @@ export function Home() {
                 products.map (product => (
                     <Product 
                         key={product.id} 
+                        id={product.id}
                         imageLink={product.imageLink}
                         name={product.name} 
                         price={product.price}
