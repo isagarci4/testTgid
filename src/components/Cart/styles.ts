@@ -8,11 +8,10 @@ export const CartContainer = styled.section<CartContainerProps>`
     width: 100%;
     max-width: 330px;
     background: ${(props) => props.theme["gray-100"]};
-    height: 100vh;
+    height: 85vh;
     position: fixed;
-    top: 0;
+    top: 100px;
     right: 0;
-    margin-top: 100px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

@@ -1,7 +1,9 @@
 import { useParams } from "react-router-dom";
 import { ImageContainer, ProductContainer, ProductDetails } from "./styles";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import axios from "axios";
+import { CartContext } from "../../context/CartContext";
+import formatCurrency from "../../utils/formatCurrency";
 
 export function Product() {
     const { id } = useParams()
@@ -33,40 +35,56 @@ export function Product() {
         }
     }
 
+    const { products, setProducts } = useContext(CartContext)
+
+    const handleAddToCart = () => {
+        setProducts([...products, {
+            id: product.id,
+            imageLink: product.imageLink,
+            name: product.name,
+            price: product.price
+       }])
+    }
+
     useEffect(() => {
         getProduct()
     }, [])
 
-    return(
+    return (
         <ProductContainer>
-            <ImageContainer>
-                <img src={product.imageLink}  />
-            </ImageContainer>
-
-            <ProductDetails>
-                <strong>{product.name}</strong>
-                <p>
-                    {product.price} 
-                </p>
-
-                <p>{product.description}</p>
-
-                <div >
-                    <button id="decrement" onClick={handleDecrement}>-</button>
-                    <input
-                        type="number"
-                        id="quantity"
-                        name="quantity"
-                        min="1"
-                        max="50"
-                        value={quantity}
-                    />
-                    <button id="increment" onClick={handleIncrement}>+</button>
-                </div>
-
-                <button id="addToCart">Adicionar ao carrinho</button>
-            </ProductDetails>
-            
+            {Object.keys(product).length === 0 ? (
+                <p>Carregando...</p>
+            ) : (
+                <>
+                    <ImageContainer>
+                        <img src={product.imageLink}  />
+                    </ImageContainer>
+    
+                    <ProductDetails>
+                        <strong>{product.name}</strong>
+                        <p>
+                            {formatCurrency(product.price, 'BRL')} 
+                        </p>
+    
+                        <p>{product.description}</p>
+    
+                        <div>
+                            <button id="decrement" onClick={handleDecrement}>-</button>
+                            <input
+                                type="number"
+                                id="quantity"
+                                name="quantity"
+                                min="1"
+                                max="50"
+                                value={quantity}
+                            />
+                            <button id="increment" onClick={handleIncrement}>+</button>
+                        </div>
+    
+                        <button id="addToCart" onClick={handleAddToCart}>Adicionar ao carrinho</button>
+                    </ProductDetails>
+                </>
+            )}
         </ProductContainer>
-    )
+    );
 }

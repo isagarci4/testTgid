@@ -1,49 +1,37 @@
-import axios from "axios";
 import { CartItem } from "../CartItem";
 import { CartContainer, CartItens, CartResume } from "./styles";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { CartContext } from "../../context/CartContext";
+import formatCurrency from "../../utils/formatCurrency";
 
-export function Cart({ isCartOpen }) {
-    const [products, setProducts] = useState([]);
-
-    const getProducts = async () => {
-        try {
-            const response = await axios.get("/api/cart");
-            const data = response.data;
-            setProducts(data);
-        } catch (error) {
-            console.log(error);
-        }
-    };
-
-    const updateCart = () => {
-        // Atualize o estado do carrinho
-        getProducts();
-    };
+export function Cart() {
+    const { isOpen } = useContext(CartContext)
+    const { products } = useContext(CartContext)
+    const [cartResume, setCartResume] = useState('R$00,00')
 
     useEffect(() => {
-        getProducts();
-    }, []);
+        const totalPrice = products.reduce((acc, product) => acc + product.price, 0);
+        setCartResume(formatCurrency(totalPrice, 'BRL'))
+    }, [products])
 
     return (
-        <CartContainer isOpen={isCartOpen}>
+        <CartContainer isOpen={isOpen}>
             <CartItens>
                 {products.length === 0 ? (
                     <p>Nenhum item no carrinho</p>
                 ) : (
                     products.map((product) => (
                         <CartItem
-                            key={product.id} // Adicione a chave única para cada item no carrinho
+                            key={product.id} 
                             id={product.id}
                             imageLink={product.imageLink}
                             name={product.name}
                             price={product.price}
-                            updateCart={updateCart}
                         />
                     ))
                 )}
             </CartItens>
-            <CartResume>Resumo do carrinho</CartResume>
+            <CartResume>{cartResume}</CartResume>
         </CartContainer>
     );
 }

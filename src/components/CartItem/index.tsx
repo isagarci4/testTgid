@@ -1,24 +1,22 @@
 import { Trash } from "phosphor-react";
 import { CartItemContainer, CartItemContent } from "./styles";
-import axios from "axios";
+import { useContext } from "react";
+import { CartContext } from "../../context/CartContext";
+import formatCurrency from "../../utils/formatCurrency";
 
 interface ProductProps {
-    id: string,
+    id: number,
     imageLink: string;
     name: string;
     price: number;
-    updateCart: () => void
 }
 
-export function CartItem({id, imageLink, name, price, updateCart}: ProductProps) {
+export function CartItem({id, imageLink, name, price}: ProductProps) {
 
-    const handleDeleteItem = async () => {
-        try {
-            await axios.delete(`api/cart/${id}`);
-            updateCart();
-        } catch (error) {
-            console.error('Erro ao excluir o item do carrinho:', error);
-        }
+    const { setProducts } = useContext(CartContext)
+
+    const handleDeleteItem = () => {
+        setProducts(prevArray => prevArray.filter(product => product.id !== id))
     };
     
     return(
@@ -27,7 +25,7 @@ export function CartItem({id, imageLink, name, price, updateCart}: ProductProps)
 
             <CartItemContent>
                 <h3>{name}</h3>
-                <p>{price}</p>
+                <p>{formatCurrency(price, 'BRL')}</p>
 
                 <button onClick={handleDeleteItem}>
                     <Trash size={20} />

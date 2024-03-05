@@ -59,6 +59,96 @@
   ],
   "cart": [
     {
+      "id": "2",
+      "imageLink": "https://m.media-amazon.com/images/I/61FQ61igtVL.__AC_SX300_SY300_QL70_ML2_.jpg",
+      "name": "Redmi Note",
+      "price": 1052
+    },
+    {
+      "id": "2",
+      "imageLink": "https://m.media-amazon.com/images/I/61FQ61igtVL.__AC_SX300_SY300_QL70_ML2_.jpg",
+      "name": "Redmi Note",
+      "price": 1052
+    },
+    {
+      "id": "3",
+      "imageLink": "https://m.media-amazon.com/images/I/61t99wqLeaL._AC_SY679_.jpg",
+      "name": "Redmi 12",
+      "price": 1009.9
+    },
+    {
+      "id": "2",
+      "imageLink": "https://m.media-amazon.com/images/I/61FQ61igtVL.__AC_SX300_SY300_QL70_ML2_.jpg",
+      "name": "Redmi Note",
+      "price": 1052
+    },
+    {
+      "id": "3",
+      "imageLink": "https://m.media-amazon.com/images/I/61t99wqLeaL._AC_SY679_.jpg",
+      "name": "Redmi 12",
+      "price": 1009.9
+    },
+    {
+      "id": "4",
+      "imageLink": "https://m.media-amazon.com/images/I/41t1UNX2zHL.__AC_SY445_SX342_QL70_ML2_.jpg",
+      "name": "iPhone 14",
+      "price": 4199
+    },
+    {
+      "id": "2",
+      "imageLink": "https://m.media-amazon.com/images/I/61FQ61igtVL.__AC_SX300_SY300_QL70_ML2_.jpg",
+      "name": "Redmi Note",
+      "price": 1052
+    },
+    {
+      "id": "1",
+      "imageLink": "https://m.media-amazon.com/images/I/41rfDU6FGqL._AC_SX679_.jpg",
+      "name": "iPhone 13",
+      "price": 3798
+    },
+    {
+      "id": "3",
+      "imageLink": "https://m.media-amazon.com/images/I/61t99wqLeaL._AC_SY679_.jpg",
+      "name": "Redmi 12",
+      "price": 1009.9
+    },
+    {
+      "id": "6",
+      "imageLink": "https://m.media-amazon.com/images/I/61i9XQeASBL.__AC_SX300_SY300_QL70_ML2_.jpg",
+      "name": "PC Gamer",
+      "price": 3159.9
+    },
+    {
+      "id": "3",
+      "imageLink": "https://m.media-amazon.com/images/I/61t99wqLeaL._AC_SY679_.jpg",
+      "name": "Redmi 12",
+      "price": 1009.9
+    },
+    {
+      "id": "1",
+      "imageLink": "https://m.media-amazon.com/images/I/41rfDU6FGqL._AC_SX679_.jpg",
+      "name": "iPhone 13",
+      "price": 3798
+    },
+    {
+      "id": "2",
+      "imageLink": "https://m.media-amazon.com/images/I/61FQ61igtVL.__AC_SX300_SY300_QL70_ML2_.jpg",
+      "name": "Redmi Note",
+      "price": 1052
+    },
+    {
+      "id": "3",
+      "imageLink": "https://m.media-amazon.com/images/I/61t99wqLeaL._AC_SY679_.jpg",
+      "name": "Redmi 12",
+      "price": 1009.9
+    },
+    {
+      "id": "2",
+      "imageLink": "https://m.media-amazon.com/images/I/61FQ61igtVL.__AC_SX300_SY300_QL70_ML2_.jpg",
+      "name": "Redmi Note",
+      "price": 1052
+    },
+    {
       "id": "1",
       "imageLink": "https://m.media-amazon.com/images/I/41rfDU6FGqL._AC_SX679_.jpg",
       "name": "iPhone 13",
@@ -75,6 +165,12 @@
       "imageLink": "https://m.media-amazon.com/images/I/61FQ61igtVL.__AC_SX300_SY300_QL70_ML2_.jpg",
       "name": "Redmi Note",
       "price": 1052
+    },
+    {
+      "id": "3",
+      "imageLink": "https://m.media-amazon.com/images/I/61t99wqLeaL._AC_SY679_.jpg",
+      "name": "Redmi 12",
+      "price": 1009.9
     }
   ]
 }

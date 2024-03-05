@@ -1,7 +1,9 @@
 import { ShoppingCartSimple } from "phosphor-react";
 import { ProductCard, ProductInfo } from "./styles";
 import { Link } from "react-router-dom";
-import axios from "axios";
+import { useContext } from "react";
+import { CartContext } from "../../context/CartContext";
+import formatCurrency from "../../utils/formatCurrency";
 
 interface ProductProps {
     id: number;
@@ -11,23 +13,18 @@ interface ProductProps {
 }
 
 export function Product({ id, imageLink, name, price }: ProductProps) {
+    const { products, setProducts } = useContext(CartContext)
+
     const addToCart = async (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         event.stopPropagation();
 
-        try {
-            const response = await axios.post("/api/cart", {
-                id: id,
-                imageLink: imageLink,
-                name: name,
-                price: price
-            });
+       setProducts([...products, {
+            id: id,
+            imageLink: imageLink,
+            name: name,
+            price: price
+       }])
 
-            const data = response.data;
-
-            console.log("Item adicionado ao carrinho", data);
-        } catch (error) {
-            console.log(error);
-        }
     };
 
     return (
@@ -38,10 +35,7 @@ export function Product({ id, imageLink, name, price }: ProductProps) {
             <ProductInfo>
                 <div>
                     <strong>{name}</strong>
-                    <p>{price.toLocaleString('pt-BR', {
-                        style: 'currency',
-                        currency: 'BRL'
-                    })}</p>
+                    <p>{formatCurrency(price, 'BRL')}</p>
                 </div>
                 <button onClick={addToCart}>
                     <ShoppingCartSimple size={18} />
