@@ -18,23 +18,23 @@ type CartContextProps = {
     children: ReactNode
 }
 
-const getInitialState = () => {
-    const products = localStorage.getItem("product")
-    return products ? JSON.parse(products) : []
-}
-
 const initialValue: CartContextType = { 
     isOpen: false,
     setIsOpen: () => {},
-    products: getInitialState(), 
+    products: [], 
     setProducts: () => {}
+}
+
+const getInitialState = () => {
+    const products = localStorage.getItem("product")
+    return products ? JSON.parse(products) : initialValue.products
 }
 
 export const CartContext = createContext<CartContextType>(initialValue)
 
 export const CartContextProvider = ({children}: CartContextProps) => {
     const [isOpen, setIsOpen] = useState(initialValue.isOpen)
-    const [products, setProducts] = useState(initialValue.products)
+    const [products, setProducts] = useState(getInitialState)
 
     useEffect(() => {
         localStorage.setItem("product", JSON.stringify(products))
