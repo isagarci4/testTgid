@@ -13,17 +13,22 @@ interface ProductProps {
 }
 
 export function Product({ id, imageLink, name, price }: ProductProps) {
-    const { products, setProducts } = useContext(CartContext)
+    const { setProducts } = useContext(CartContext)
 
     const addToCart = async (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         event.stopPropagation();
 
-       setProducts([...products, {
-            id: id,
-            imageLink: imageLink,
-            name: name,
-            price: price
-       }])
+        setProducts((prev) => (
+					[
+						...prev, 
+						{
+							id: id,
+							imageLink: imageLink,
+							name: name,
+							price: price
+					}
+				]
+				))
 
     };
 
