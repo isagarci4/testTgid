@@ -44,5 +44,10 @@ export const ProductInfo = styled.div`
         display: flex;
         justify-content: center;
         align-items: center;
+
+        &:hover {
+            background: ${(props) => props.theme["green-100"]};
+            color:  ${(props) => props.theme["blue-400"]} ;
+        }
     }
 `
